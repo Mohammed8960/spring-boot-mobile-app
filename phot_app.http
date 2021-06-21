@@ -1,0 +1,100 @@
+### create User
+POST http://localhost:8081/mobile-app-ws/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "firstName": "Mohammed",
+  "lastName": "abdelrasoul",
+  "email": "eng.mohamoh111s@gmail.com",
+  "password": "M*1234567",
+  "addresses": [
+    {
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "streetName": "Ulaya Street",
+      "postalCode": "21231",
+      "type": "biling"
+    },
+    {
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "streetName": "Ulaya Street",
+      "postalCode": "21231",
+      "type": "shipping"
+    }
+  ]
+}
+
+###
+
+### Login
+POST http://localhost:8081/mobile-app-ws/users/login
+Content-Type: application/json
+
+{
+  "email": "mohammed.abdelrasoul@gmail.com",
+  "password": "M*1234567"
+}
+
+### get users
+GET http://localhost:8081/mobile-app-ws/users/5chtHu3tyeDAJBZHN4th1ADhGSqCZa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2hhbW1lZC5hYmRlbHJhc291bEBnbWFpbC5jb20iLCJleHAiOjE2MjQ5MDc4ODd9.tOTWbkf_SGU4peQ715tC1xWhiGJ_Ho36bmrsZehY22px4zPlTVltL3P-ofp3KWPMWJ9fqb3c-8lDdLV4bubHDQ
+
+
+### update user
+PUT http://localhost:8081/mobile-app-ws/users/5chtHu3tyeDAJBZHN4th1ADhGSqCZa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2hhbW1lZC5hYmRlbHJhc291bEBnbWFpbC5jb20iLCJleHAiOjE2MjQ5NDgyMzV9.Lw-jzfwAr8BRq_ZjX8unDNlEqPM_2J2DyRPj68VJ7IubIWWaJbMYmj0REac2oLgYM4Uo5pwEJ_w9vAPQWTHATg
+
+{
+  "firstName": "Mahmoud",
+  "lastName": "Ismail2"
+}
+
+
+
+### Delete user
+DELETE http://localhost:8081/mobile-app-ws/users/gSnKZQNrzKzKcTZLk2HG0BK95eXbzH
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbmcubW9oYW1vaEBnbWFpbC5jb20iLCJleHAiOjE2MjUxNDYxNTF9.82rILdSrlF4CfNzC3vj5Cg1-cUO82zLpFIWzhIexCzL9po9vJswCj4656lyQDfn9fvmAEg4vHvWx1mzKkYmekQ
+
+### get all users
+GET http://localhost:8081/mobile-app-ws/users?page=0&limit=10
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2hhbW1lZC5hYmRlbHJhc291bEBnbWFpbC5jb20iLCJleHAiOjE2MjQ5NDgyMzV9.Lw-jzfwAr8BRq_ZjX8unDNlEqPM_2J2DyRPj68VJ7IubIWWaJbMYmj0REac2oLgYM4Uo5pwEJ_w9vAPQWTHATg
+Accept: application/json
+
+### get user addresses
+GET http://localhost:8081/mobile-app-ws/users/5chtHu3tyeDAJBZHN4th1ADhGSqCZa/addresses
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2hhbW1lZC5hYmRlbHJhc291bEBnbWFpbC5jb20iLCJleHAiOjE2MjQ5MDc4ODd9.tOTWbkf_SGU4peQ715tC1xWhiGJ_Ho36bmrsZehY22px4zPlTVltL3P-ofp3KWPMWJ9fqb3c-8lDdLV4bubHDQ
+
+
+### get address by id
+GET http://localhost:8081/mobile-app-ws/users/5chtHu3tyeDAJBZHN4th1ADhGSqCZa/addresses/27bsBFOpkJZnTw5onVkKuhtvWkYIKI
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2hhbW1lZC5hYmRlbHJhc291bEBnbWFpbC5jb20iLCJleHAiOjE2MjQ5MDc4ODd9.tOTWbkf_SGU4peQ715tC1xWhiGJ_Ho36bmrsZehY22px4zPlTVltL3P-ofp3KWPMWJ9fqb3c-8lDdLV4bubHDQ
+
+
+### verify token
+GET http://localhost:8081/mobile-app-ws/users/email-verification?token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5Y2V0OTZiM3Fvb3loeEtJNUVIMFZHaXRnVTZlcHoiLCJleHAiOjE2MjQ5OTI4NjJ9.4JAGfxMBOC2hxYGhNNQqgtrcGQDZxrvrFQy25FEKLzp19qOSEWJQHEPf5hLbEcHf0poT5Z6byQ_-UIGS9K6n_A
+
+### password reset request
+POST http://localhost:8081/mobile-app-ws/users/password-reset-request
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2hhbW1lZC5hYmRlbHJhc291bEBnbWFpbC5jb20iLCJleHAiOjE2MjQ5NDgyMzV9.Lw-jzfwAr8BRq_ZjX8unDNlEqPM_2J2DyRPj68VJ7IubIWWaJbMYmj0REac2oLgYM4Uo5pwEJ_w9vAPQWTHATg
+
+{
+  "email": "eng.mohamoh@gmail.com"
+}
+
+### password reset request
+POST http://localhost:8081/mobile-app-ws/users/password-reset
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2hhbW1lZC5hYmRlbHJhc291bEBnbWFpbC5jb20iLCJleHAiOjE2MjQ5NDgyMzV9.Lw-jzfwAr8BRq_ZjX8unDNlEqPM_2J2DyRPj68VJ7IubIWWaJbMYmj0REac2oLgYM4Uo5pwEJ_w9vAPQWTHATg
+
+{
+  "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1OWVJaGlDeHZUdWZnY2pCOE9uSTNTcGRMNXYxT3giLCJleHAiOjE2MjUwNDQ5Njd9.EksnxEnuM_xew70kOjs8R1AfPpzjx0yqFWxKhPN5bwnUrzJoVFW0Au63jGNk0NU91DadYF9DDe6347aLg81IVQ",
+  "password": "M*1234567"
+}
